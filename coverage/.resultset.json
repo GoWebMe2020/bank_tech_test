@@ -1,0 +1,25 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jpferreira/Desktop/Projects/week_10/bank_tech_test/spec/account_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jpferreira/Desktop/Projects/week_10/bank_tech_test/lib/account.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1625482325
+  }
+}
