@@ -23,4 +23,10 @@ describe Account do
     expect(@account.balance).to eq(Account::STARTING_BALANCE)
   end
 
+  it 'decreases the balance when a withdrawel is made' do
+    @account.deposit('01/06/2021', 1000)
+    @account.withdraw('02/06/2021', 500)
+    expect(@account.balance).to eq(500)
+  end
+
 end
