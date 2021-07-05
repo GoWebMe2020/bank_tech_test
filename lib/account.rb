@@ -1,3 +1,5 @@
+require 'statement'
+
 class Account
 
   attr_accessor :balance
@@ -6,6 +8,7 @@ class Account
 
   def initialize
     @balance = STARTING_BALANCE
+    @statement = Statement.new
   end
 
   def deposit(date, deposit_amount)
