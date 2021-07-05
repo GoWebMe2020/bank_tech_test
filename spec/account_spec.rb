@@ -15,7 +15,7 @@ describe Account do
   end
 
   it 'increases the balance available when a deposit is made' do
-    @account.deposit('01/06/2021', 1000)
+    @account.deposit(1000)
     expect(@account.balance).to eq(1000)
   end
 
@@ -28,8 +28,8 @@ describe Account do
   end
 
   it 'decreases the balance when a withdrawel is made' do
-    @account.deposit('01/06/2021', 1000)
-    @account.withdraw('02/06/2021', 500)
+    @account.deposit(1000)
+    @account.withdraw(500)
     expect(@account.balance).to eq(500)
   end
 
@@ -38,15 +38,15 @@ describe Account do
   end
 
   it 'can has a transactions variable' do
-    @account.deposit('01/06/2021', 1000)
-    @account.withdraw('02/06/2021', 500)
+    @account.deposit(1000)
+    @account.withdraw(500)
     expect(@account.transactions.length).to eq(2)
   end
 
   it 'prints out the transactions in the Statement' do
-    @account.deposit('01/06/2021', 1000)
-    @account.withdraw('02/06/2021', 600)
-    @account.stub(:print_statement).and_return('Your transaction is printed')
-    expect(@account.print_statement).to eq('Your transaction is printed')
+    @account.deposit(1000)
+    @account.withdraw(600)
+    @account.stub(:print_statement).and_return('Your statement is printed')
+    expect(@account.print_statement).to eq('Your statement is printed')
   end
 end

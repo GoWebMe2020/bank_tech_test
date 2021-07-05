@@ -4,7 +4,6 @@
       "/Users/jpferreira/Desktop/Projects/week_10/bank_tech_test/lib/account.rb": {
         "lines": [
           1,
-          1,
           null,
           1,
           null,
@@ -20,16 +19,31 @@
           1,
           4,
           4,
-          4,
-          4,
-          4,
           null,
           null,
           1,
           3,
           3,
-          3,
-          3,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
           3,
           null,
           null,
@@ -37,28 +51,11 @@
           7,
           null,
           null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
           null,
           null
         ]
-      },
-      "/Users/jpferreira/Desktop/Projects/week_10/bank_tech_test/lib/statement.rb": {
-        "lines": [
-
-        ]
       }
     },
-    "timestamp": 1625495455
+    "timestamp": 1625497316
   }
 }
