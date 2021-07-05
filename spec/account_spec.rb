@@ -5,6 +5,10 @@ describe Account do
   before :each do
     @account = Account.new
   end
+
+  after :each do
+    @transactions = 0
+  end
   
   it 'can create a new account' do
     expect(@account).to be_instance_of(Account)
@@ -27,6 +31,18 @@ describe Account do
     @account.deposit('01/06/2021', 1000)
     @account.withdraw('02/06/2021', 500)
     expect(@account.balance).to eq(500)
+  end
+
+  it 'can has a transactions variable' do
+    @account = Account.new
+    expect(@account.transactions.length).to eq(0)
+  end
+
+  it 'can has a transactions variable' do
+    @account = Account.new
+    @account.deposit('01/06/2021', 1000)
+    @account.withdraw('02/06/2021', 500)
+    expect(@account.transactions.length).to eq(2)
   end
 
 end

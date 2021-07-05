@@ -1,4 +1,5 @@
 require 'statement'
+require 'account'
 
 describe Statement do
 
@@ -11,9 +12,15 @@ describe Statement do
     expect(@statement).to be_instance_of(Statement)
   end
 
-  it 'can store transactions' do
+  it 'can has a transactions variable' do
     @account = Account.new
-    expect(@statement.transactions).to eq([])
+    expect(@account.transactions.length).to eq(0)
+  end
+
+  it 'can has a transactions variable' do
+    @account = Account.new
+    @account.deposit('01/06/2021', 1000)
+    expect(@account.transactions.length).to eq(1)
   end
 
 end
