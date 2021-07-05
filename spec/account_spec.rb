@@ -15,4 +15,12 @@ describe Account do
     expect(@account.balance).to eq(1000)
   end
 
+  it 'ensures that every new account starts with a 0 balance' do
+    expect(@account.balance).to eq(0)
+  end
+
+  it 'ensures that every account has a STARTING_BALANCE of 0' do
+    expect(@account.balance).to eq(Account::STARTING_BALANCE)
+  end
+
 end
