@@ -33,16 +33,20 @@ describe Account do
     expect(@account.balance).to eq(500)
   end
 
-  it 'can has a transactions variable' do
-    @account = Account.new
+  it 'has an empty transactions variable' do
     expect(@account.transactions.length).to eq(0)
   end
 
   it 'can has a transactions variable' do
-    @account = Account.new
     @account.deposit('01/06/2021', 1000)
     @account.withdraw('02/06/2021', 500)
     expect(@account.transactions.length).to eq(2)
   end
 
+  it 'prints out the transactions in the Statement' do
+    @account.deposit('01/06/2021', 1000)
+    @account.withdraw('02/06/2021', 600)
+    @account.stub(:print_statement).and_return('Your transaction is printed')
+    expect(@account.print_statement).to eq('Your transaction is printed')
+  end
 end

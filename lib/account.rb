@@ -1,4 +1,4 @@
-require './lib/statement'
+require 'terminal-table'
 
 class Account
 
@@ -31,4 +31,17 @@ class Account
     transactions << { date: @date, credit: @deposit_amount, debit: @withdrawel_amount, balance: @balance }
   end
 
+  def print_statement
+    rows = []
+    table = Terminal::Table.new rows: rows
+  
+    @transactions.each do |transaction|
+      rows << [transaction[:date], transaction[:credit], transaction[:debit], transaction[:balance]]
+    end
+    table = Terminal::Table.new rows: rows
+    table = Terminal::Table.new headings: %w[date credit debit balance], rows: rows
+    puts table
+  end
+
 end
+
