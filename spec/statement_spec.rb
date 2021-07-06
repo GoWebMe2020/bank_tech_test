@@ -3,6 +3,7 @@ require 'account'
 
 describe Statement do
 
+  
   before :each do
     @statement = Statement.new
     @account = Account.new(@statement)
