@@ -70,6 +70,7 @@ Then she would see
 * can create a new account
 * increases the balance available when a deposit is made
 * decreases the balance when a withdrawel is made
+* will not let the user draw the account to below 0 (edge case)
 
 ### Statement
 

@@ -35,6 +35,12 @@ describe Account do
       @account.withdraw(500)
       expect(@account.balance).to eq(500)
     end
+
+    it 'will not let the user draw the account to below 0' do
+      @account.deposit(1000)
+      @account.withdraw(500)
+      expect { @account.withdraw(501) }.to raise_error("Insufficient funds")
+    end
   end
 
 end
