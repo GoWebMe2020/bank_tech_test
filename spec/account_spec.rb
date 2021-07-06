@@ -3,7 +3,8 @@ require 'account'
 describe Account do
 
   before :each do
-    @account = Account.new
+    @statement = Statement.new
+    @account = Account.new(@statement)
   end
 
   after :each do
@@ -40,6 +41,13 @@ describe Account do
       @account.deposit(1000)
       @account.withdraw(500)
       expect { @account.withdraw(501) }.to raise_error("Insufficient funds")
+    end
+  end
+
+  describe '#print_statement' do
+    it 'can print statements to the terminal' do
+      @account.stub(:print_statement).and_return('Your statement is printed')
+      expect(@account.print_statement).to eq('Your statement is printed')
     end
   end
 

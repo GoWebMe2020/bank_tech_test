@@ -1,4 +1,4 @@
-require 'statement'
+require './lib/statement'
 
 class Account
 
@@ -18,9 +18,12 @@ class Account
 
   def withdraw(amount)
     fail "Insufficient funds" if over_draft?(amount)
-    p over_draft?(amount)
     @balance -= amount
     @statement.save_withdrawel(amount, @balance)
+  end
+
+  def print_statement
+    @statement.render_statement
   end
 
   private

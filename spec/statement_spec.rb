@@ -26,9 +26,9 @@ describe Statement do
   it 'prints out the transactions in the Statement' do
     @account.deposit(1000)
     @account.withdraw(600)
-    @statement.print_statement
-    @statement.stub(:print_statement).and_return('Your statement is printed')
-    expect(@statement.print_statement).to eq('Your statement is printed')
+    @statement.render_statement
+    @statement.stub(:render_statement).and_return('Your statement is rendered')
+    expect(@statement.render_statement).to eq('Your statement is rendered')
   end
 
 end

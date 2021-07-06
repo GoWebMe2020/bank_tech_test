@@ -1,5 +1,4 @@
 require 'terminal-table'
-require 'account'
 
 class Statement
 
@@ -9,7 +8,7 @@ class Statement
     @transactions = []
   end
 
-  def print_statement
+  def render_statement
     rows = []
     table = Terminal::Table.new rows: rows
 
