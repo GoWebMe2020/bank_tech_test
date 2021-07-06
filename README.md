@@ -42,19 +42,40 @@ And a withdrawal of 500 on 14-01-2012
 When she prints her bank statement
 Then she would see
 
-date       || credit    || debit     || balance
-14/01/2012 ||           || 500.00    || 2500.00
-13/01/2012 || 2000.00   ||           || 3000.00
-10/01/2012 || 1000.00   ||           || 1000.00
+| Date       | Credit | Debit | Balance |
+|:-----------|:-------|:------|:--------|
+| 14/01/2012 | 1000   | 0     | 1000    |
+| 13/01/2012 | 1000   | 0     | 2000    |
+| 10/01/2012 | 0      | 500   | 1500    |
+
 
 ## Installation
 
+* Clone this repo
+* Open irb in your terminal
+* Create a new account
+* Use the relevant methods to deposit, withdraw and print statements.
 
 ## Running the code
 
+* cd into the relevant directory and run rspec
+* You can open the index.html file in the coverage folder to see the coverage.
 
 ## Tests
 
+### Account
+
+* ensures that every new account starts with a 0 balance
+* ensures that every account has a STARTING_BALANCE of 0
+* can create a new account
+* increases the balance available when a deposit is made
+* decreases the balance when a withdrawel is made
+
+### Statement
+
+* has an empty transactions variable
+* has a transactions variable that stores transactions
+* prints out the transactions in the Statement
 
 ## Dependencies and Stack
 
@@ -62,5 +83,6 @@ date       || credit    || debit     || balance
 * RSpec
 * Simplecov
 
-
 ## Credits
+
+JP Ferreira
