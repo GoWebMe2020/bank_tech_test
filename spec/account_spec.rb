@@ -25,22 +25,22 @@ describe Account do
 
   describe '#deposit' do
     it 'increases the balance available when a deposit is made' do
-      @account.deposit(1000)
+      @account.deposit(1000, 07/07/2021)
       expect(@account.balance).to eq(1000)
     end
   end
   
   describe '#withdrawel' do
     it 'decreases the balance when a withdrawel is made' do
-      @account.deposit(1000)
-      @account.withdraw(500)
+      @account.deposit(1000, '07/07/2021')
+      @account.withdraw(500, '07/07/2021')
       expect(@account.balance).to eq(500)
     end
 
     it 'will not let the user draw the account to below 0' do
-      @account.deposit(1000)
-      @account.withdraw(500)
-      expect { @account.withdraw(501) }.to raise_error("Insufficient funds")
+      @account.deposit(1000, '07/07/2021')
+      @account.withdraw(500, '07/07/2021')
+      expect { @account.withdraw(501, '07/07/2021') }.to raise_error("Insufficient funds")
     end
   end
 

@@ -18,14 +18,14 @@ describe Statement do
   end
 
   it 'has a transactions variable that stores transactions' do
-    @account.deposit(1000)
-    @account.withdraw(500)
+    @account.deposit(1000, '07/07/2021')
+    @account.withdraw(500, '07/07/2021')
     expect(@statement.transactions.length).to eq(2)
   end
 
   it 'prints out the transactions in the Statement' do
-    @account.deposit(1000)
-    @account.withdraw(600)
+    @account.deposit(1000, '07/07/2021')
+    @account.withdraw(600, '07/07/2021')
     @statement.render_statement
     @statement.stub(:render_statement).and_return('Your statement is rendered')
     expect(@statement.render_statement).to eq('Your statement is rendered')
