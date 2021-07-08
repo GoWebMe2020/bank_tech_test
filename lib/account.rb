@@ -43,10 +43,10 @@ class Account
   end
 
   def time_of_transaction
-    if !date
+    if !@date
       Time.now.strftime("%d-%m-%Y")
     else
-      date
+      @date
     end
   end
 

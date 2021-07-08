@@ -3,12 +3,8 @@ require 'account'
 describe Account do
 
   before :each do
-    @statement = Statement.new
+    @statement = double(:statement, transactions: [], render_statement: 'Your statement is printed')
     @account = Account.new(@statement)
-  end
-
-  after :each do
-    @transactions = 0
   end
 
   it 'ensures that every new account starts with a 0 balance' do
@@ -25,7 +21,7 @@ describe Account do
 
   describe '#deposit' do
     it 'increases the balance available when a deposit is made' do
-      @account.deposit(1000, 07/07/2021)
+      @account.deposit(1000, '07/07/2021')
       expect(@account.balance).to eq(1000)
     end
   end
@@ -45,8 +41,8 @@ describe Account do
   end
 
   describe '#print_statement' do
-    it 'can print statements to the terminal' do
-      @account.stub(:print_statement).and_return('Your statement is printed')
+    it 'calls render_statement from the Statement class' do
+      expect(@statement).to receive(:render_statement)
       expect(@account.print_statement).to eq('Your statement is printed')
     end
   end

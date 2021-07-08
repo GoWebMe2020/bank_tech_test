@@ -19,6 +19,4 @@ class Statement
     puts table
   end
 
-  
-
 end
